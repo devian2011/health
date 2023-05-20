@@ -83,7 +83,7 @@ func (h *Health) OnLostRegister(code string, fn func(result CheckResult)) error 
 
 func (h *Health) OnRestoreRegister(code string, fn func(result CheckResult)) error {
 	if _, exists := h.onRestore[code]; exists {
-		return ErrOnLostFnAlreadyExists
+		return ErrOnRestoreFnAlreadyExists
 	}
 	h.onRestore[code] = fn
 
